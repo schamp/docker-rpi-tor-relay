@@ -4,6 +4,8 @@ A simple Docker container for running a Tor relay server. The container is confi
 
 The container is also configured to listen on port 9001 for the relay traffic. Make sure to open the in your firewall.
 
+Derived from https://github.com/vpetersson/docker-tor-relay, modified for use on Raspbian (Jessie)
+
 ## Usage
 
 ### Minimal usage
@@ -13,8 +15,8 @@ Running the relay is super simple.
     $ docker run -d \
         -p 9001:9001 \
         --restart=always \
-        --name=torrelay \
-        -t vpetersson/torrelay
+        --name=tor-relay \
+        -t schamp/rpi-tor-relay
 
 ### Recommended additional flags
 

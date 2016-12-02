@@ -1,12 +1,12 @@
-# Dockerized Tor Relay Node
+# Dockerized Tor Relay Node on Raspberry Pi
 #
 # VERSION               0.0.1
 
-FROM ubuntu:14.04
-MAINTAINER Viktor Petersson "vpetersson@wireload.net"
+FROM resin/rpi-raspbian:jessie
+MAINTAINER Andrew Schamp "schamp@gmail.com"
 
 # Install Tor
-RUN apt-get update && echo 'deb http://deb.torproject.org/torproject.org trusty main' >> /etc/apt/sources.list && gpg --keyserver keys.gnupg.net --recv 886DDD89 && gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | sudo apt-key add - && apt-get update && apt-get -y install tor && apt-get clean
+RUN apt-get update && apt-get -y install tor && apt-get clean
 
 # Expose the main port
 EXPOSE 9001

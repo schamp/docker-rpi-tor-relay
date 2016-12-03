@@ -2,7 +2,7 @@
 #
 # VERSION               0.0.1
 
-FROM resin/rpi-raspbian:jessie
+FROM resin/rpi-raspbian
 MAINTAINER Andrew Schamp "schamp@gmail.com"
 
 # Install Tor
